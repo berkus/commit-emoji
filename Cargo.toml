@@ -1,0 +1,22 @@
+[package]
+name = "commit-emoji"
+version = "0.1.0"
+authors = ["Berkus Decker <berkus+crates@madfire.net>"]
+description = "A git hook for adorning conventional commits with emoji"
+edition = "2021"
+readme = "README.md"
+repository = "https://github.com/berkus/commit-emoji"
+license = "GPL-3.0-only"
+keywords = ["git", "hook", "conventional", "commits", "emoji"]
+categories = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+anyhow = "1.0.79"
+argh = "0.1.12"
+git-conventional = { version = "0.12.4", features = ["serde"] }
+inquire = "0.6.2"
+once_cell = "1.19.0"
+resolve-path = "0.1.0"
+serde = "1.0.195"
+toml = "0.8.8"
+unic-emoji-char = "0.9.0"

@@ -1,0 +1,117 @@
+# The settings listed in the current example file are baked in into the binary so you do not have to create any
+# configuration for default operation with these settings.
+# If you provide your own config file it will override any settings provided here.
+# Custom configuration file can be placed in .commit-emoji.toml in the root of a git repository to provide
+# per-repository settings or in `~/.config/commit-emoji/config.toml` to provide global per-user settings.
+# Run `commit-emoji -i` from inside a git repo to install the git hook.
+
+# Shall we mark breaking commits with a special emoji, defaults to true.
+breaking = true
+
+# Array of commit types
+# `name` is the conventional commit type prefix,
+# `emoji` is the emoji to prepend to the commit description.
+# `description` is optional and is currently unused, convenient for a small configuration comment though.
+
+[[commit_types]]
+name = "breaking"
+emoji = "💔"
+description = "Special commit type for marking breaking changes if the breaking flag is on"
+
+[[commit_types]]
+name = "feat"
+emoji = "✨"
+description = "A new feature"
+
+[[commit_types]]
+name = "fix"
+emoji = "🐛"
+description = "A bug fix"
+
+[[commit_types]]
+name = "docs"
+emoji = "📚"
+description = "Changes to the documentation"
+
+[[commit_types]]
+name = "style"
+emoji = "💎"
+description = "Changes that do not affect the meaning of the code: formatting, missing semicolons, etc"
+
+[[commit_types]]
+name = "refactor"
+emoji = "📦"
+description = "A code change that neither fixes a bug nor adds a feature"
+
+[[commit_types]]
+name = "perf"
+emoji = "🚀"
+description = "A code change that improves performance"
+
+[[commit_types]]
+name = "test"
+emoji = "🚨"
+description = "Adding missing tests or correcting existing tests"
+
+[[commit_types]]
+name = "build"
+emoji = "🛠"
+description = "Changes that affect the build system or external dependencies"
+
+[[commit_types]]
+name = "ci"
+emoji = "⚙️"
+description = "Changes to CI configuration files and scripts"
+
+[[commit_types]]
+name = "chore"
+emoji = "♻️"
+description = "Other changes to auxiliary tools and libraries that don't modify src or test files"
+
+[[commit_types]]
+name = "revert"
+emoji = "🗑"
+description = "Reverts a previous commit"
+
+[[commit_types]]
+name = "deprecated"
+emoji = "⛔️"
+description = "Deprecates feature"
+
+[[commit_types]]
+name = "removed"
+emoji = "❌"
+description = "Removes feature"
+
+[[commit_types]]
+name = "security"
+emoji = "🔐"
+description = "Security fixes"
+
+[[commit_types]]
+name = "merge"
+emoji = "⛓️"
+description = "Merge branch"
+
+# Replacements change the whole message text of the commit and are useful for some special cases as shortcuts.
+# For example, you could replace quick random messages like "asdf" or "poop" with more sensible text.
+
+[[replacements]]
+from = "initial"
+to = "feat: 🎉 Initial commit"
+
+[[replacements]]
+from = "dependencies"
+to = "fix: ⏫ Update dependencies"
+
+[[replacements]]
+from = "peerDependencies"
+to = "fix: ⬆️ Update peer dependencies"
+
+[[replacements]]
+from = "devDependencies"
+to = "chore: 🔼 Update development dependencies"
+
+[[replacements]]
+from = "metadata"
+to = "fix: 📦 Update metadata (Cargo.toml)"
