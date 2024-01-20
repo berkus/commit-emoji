@@ -101,15 +101,15 @@ from = "initial"
 to = "feat: 🎉 Initial commit"
 
 [[replacements]]
-from = "dependencies"
+from = "deps"
 to = "fix: ⏫ Update dependencies"
 
 [[replacements]]
-from = "peerDependencies"
+from = "peerdeps"
 to = "fix: ⬆️ Update peer dependencies"
 
 [[replacements]]
-from = "devDependencies"
+from = "devdeps"
 to = "chore: 🔼 Update development dependencies"
 
 [[replacements]]

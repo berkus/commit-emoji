@@ -24,3 +24,11 @@ Supported configuration options are visible in the provided configuration file i
 * Run `commit-emoji -i` from inside a git repo to install the git hook.
 
 * Run `commit-emoji -u` from a git repo to remove the hook. Removing the hook is safe - it will check the hook file to be the exact match of what it installed an warn you if you have any modifications in it.
+
+## Default replacements
+
+`initial` - to make you first commit pretty,
+
+`deps`, `devdeps`, `peerdeps` - to bump dependencies easily,
+
+`metadata` - to update package metadata in Cargo.toml.

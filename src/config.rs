@@ -124,13 +124,10 @@ static DEFAULT_CONFIG: Lazy<Config> = Lazy::new(|| Config {
     ]),
     replacements: HashMap::from([
         ("initial".into(), "feat: 🎉 Initial commit".into()),
-        ("dependencies".into(), "fix: ⏫ Update dependencies".into()),
+        ("deps".into(), "fix: ⏫ Update dependencies".into()),
+        ("peerdeps".into(), "fix: ⬆️ Update peer dependencies".into()),
         (
-            "peerDependencies".into(),
-            "fix: ⬆️ Update peer dependencies".into(),
-        ),
-        (
-            "devDependencies".into(),
+            "devdeps".into(),
             "chore: 🔼 Update development dependencies".into(),
         ),
         (
