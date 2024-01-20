@@ -115,3 +115,7 @@ to = "chore: 🔼 Update development dependencies"
 [[replacements]]
 from = "metadata"
 to = "fix: 📦 Update metadata (Cargo.toml)"
+
+[[replacements]]
+from = "typos"
+to = "chore: ♻️ Fix typos"

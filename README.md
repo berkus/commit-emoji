@@ -31,4 +31,6 @@ Supported configuration options are visible in the provided configuration file i
 
 `deps`, `devdeps`, `peerdeps` - to bump dependencies easily,
 
-`metadata` - to update package metadata in Cargo.toml.
+`metadata` - to update package metadata in Cargo.toml,
+
+`typos` - to fix typos.

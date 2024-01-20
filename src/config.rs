@@ -134,5 +134,6 @@ static DEFAULT_CONFIG: Lazy<Config> = Lazy::new(|| Config {
             "metadata".into(),
             "fix: 📦 Update metadata (Cargo.toml)".into(),
         ),
+        ("typos".into(), "chore: ♻️ Fix typos".into()),
     ]),
 });
