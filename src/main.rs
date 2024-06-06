@@ -2,8 +2,6 @@
 // Entirely borrowed from https://gitlab.com/ogarcia/lazycc/-/blob/master/src/main.rs
 // SPDX: GPL-3.0-only
 //
-#![feature(let_chains)]
-
 use {anyhow::Result, argh::FromArgs};
 
 const APP_NAME: &str = env!("CARGO_PKG_NAME");
