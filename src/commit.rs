@@ -58,14 +58,14 @@ pub fn generate_commit_message(commit_msg_file: &str) -> Result<()> {
 
     // if entire message is matching "replacements" - replace and be done with it!
     let trimmed_message = existing_message.trim();
-    if trimmed_message.lines().count() == 1
-        && let Some(replacement) = config.replacements.get(trimmed_message)
-    {
-        write(commit_msg_file, replacement).context(format!(
-            "Failed to write to commit message file {:?}",
-            &commit_msg_file
-        ))?;
-        return Ok(());
+    if trimmed_message.lines().count() == 1 {
+        if let Some(replacement) = config.replacements.get(trimmed_message) {
+            write(commit_msg_file, replacement).context(format!(
+                "Failed to write to commit message file {:?}",
+                &commit_msg_file
+            ))?;
+            return Ok(());
+        }
     }
 
     let commit = Commit::parse(&existing_message)?;
