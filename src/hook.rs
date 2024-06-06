@@ -2,8 +2,6 @@
 // Entirely borrowed from https://gitlab.com/ogarcia/lazycc/-/blob/master/src/hook.rs
 // SPDX: GPL-3.0-only
 //
-#[cfg(unix)]
-use std::{fs::Permissions, os::unix::fs::PermissionsExt, set_permissions};
 use {
     super::repo,
     anyhow::{Context, Error, Result},
@@ -15,7 +13,13 @@ use {
 };
 
 #[cfg(unix)]
-const PERMISSIONS: u32 = 0o775;
+fn set_file_permissions(path: &PathBuf) -> Result<()> {
+    use std::os::unix::fs::PermissionsExt;
+    const PERMISSIONS: u32 = 0o775;
+    std::fs::set_permissions(path, std::fs::Permissions::from_mode(PERMISSIONS))?;
+    Ok(())
+}
+
 const FILENAME: &str = "commit-msg";
 const CONTENTS: &str = "#!/bin/sh\ncommit-emoji \"${@}\"\n";
 
@@ -53,7 +57,7 @@ pub fn install() -> Result<()> {
         .context(format!("Failed to write hook contents in {:?}", &hook_path))?;
 
     #[cfg(unix)]
-    set_permissions(hook_path, Permissions::from_mode(PERMISSIONS))?;
+    set_file_permissions(&hook_path)?;
 
     println!("Hook installed for this repo!");
 
