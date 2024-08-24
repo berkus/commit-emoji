@@ -114,7 +114,7 @@ static DEFAULT_CONFIG: Lazy<Config> = Lazy::new(|| Config {
         ("test".into(), "🚨".into()),
         ("build".into(), "🛠".into()),
         ("ci".into(), "⚙️".into()),
-        ("chore".into(), "♻️".into()),
+        ("chore".into(), "🧹".into()),
         ("revert".into(), "🗑".into()),
         ("deprecated".into(), "⛔️".into()),
         ("removed".into(), "❌".into()),

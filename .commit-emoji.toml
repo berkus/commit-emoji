@@ -65,7 +65,7 @@ description = "Changes to CI configuration files and scripts"
 
 [[commit_types]]
 name = "chore"
-emoji = "♻️"
+emoji = "🧹"
 description = "Other changes to auxiliary tools and libraries that don't modify src or test files"
 
 [[commit_types]]
