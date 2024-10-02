@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.3](https://github.com/berkus/commit-emoji/compare/v0.2.2...v0.2.3) - 2024-10-02
+
+### Fixed
+
+- 🐛 Create full hook path if it doesn't exist
+
 ## [0.2.2](https://github.com/berkus/commit-emoji/compare/v0.2.1...v0.2.2) - 2024-08-24
 
 ### Fixed
