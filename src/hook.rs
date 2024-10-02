@@ -1,12 +1,12 @@
 //
-// Entirely borrowed from https://gitlab.com/ogarcia/lazycc/-/blob/master/src/hook.rs
+// Mostly borrowed from https://gitlab.com/ogarcia/lazycc/-/blob/master/src/hook.rs
 // SPDX: GPL-3.0-only
 //
 use {
     super::repo,
     anyhow::{Context, Error, Result},
     std::{
-        fs::{read_to_string, remove_file, File},
+        fs::{create_dir_all, read_to_string, remove_file, File},
         io::Write,
         path::PathBuf,
     },
@@ -50,6 +50,9 @@ fn check_installed() -> Result<PathBuf> {
 
 pub fn install() -> Result<()> {
     let hook_path = check_installed()?;
+
+    // Create hook path, in case parts of it don't exist (could happen in a worktree)
+    create_dir_all(&hook_path)?;
 
     let mut file =
         File::create(&hook_path).context(format!("Failed to create hook {:?}", &hook_path))?;
