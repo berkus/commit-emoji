@@ -26,6 +26,10 @@ const CONTENTS: &str = "#!/bin/sh\ncommit-emoji \"${@}\"\n";
 fn get_hook_absolute_path() -> Result<PathBuf> {
     let mut path = repo::get_absolute_path()?;
     path.push("hooks");
+
+    // Create hook path, in case parts of it don't exist (could happen in a worktree)
+    create_dir_all(&path)?;
+
     path.push(FILENAME);
     Ok(path)
 }
@@ -50,9 +54,6 @@ fn check_installed() -> Result<PathBuf> {
 
 pub fn install() -> Result<()> {
     let hook_path = check_installed()?;
-
-    // Create hook path, in case parts of it don't exist (could happen in a worktree)
-    create_dir_all(&hook_path)?;
 
     let mut file =
         File::create(&hook_path).context(format!("Failed to create hook {:?}", &hook_path))?;
